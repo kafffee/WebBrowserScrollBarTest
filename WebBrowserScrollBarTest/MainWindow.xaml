@@ -1,0 +1,30 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WebBrowserScrollBarTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStyle="None" ResizeMode="CanResizeWithGrip" Background="Black">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="28"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="{Binding FensterTitel, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" FontSize="13" Foreground="Black" Grid.Column="0" Grid.Row="0" MouseLeftButtonDown="Label_MouseLeftButtonDown" Background="{DynamicResource VordergrundfarbeBrush}"/>
+
+        <Border Name="brdSchliessen" ToolTip="Plugin-Fenster schliessen..." Grid.Column="1" Grid.Row="0" MouseLeftButtonDown="brdSchliessen_MouseLeftButtonDown"  Background="{DynamicResource VordergrundfarbeBrush}" HorizontalAlignment="Right">
+           
+            <Viewbox Stretch="Uniform">
+                <Path VerticalAlignment="Center" Fill="Black" Data="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z"/>
+            </Viewbox>
+        </Border>
+        <local:QuickStartGuideView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <!--<ContentPresenter Content="{Binding}"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>-->
+    </Grid>
+</Window>
